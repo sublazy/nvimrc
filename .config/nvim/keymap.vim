@@ -262,7 +262,7 @@ nnoremap <leader>bb :Denite buffer:<cr>
 nnoremap <leader>bi :call BufferList()<cr>
 
 " bufkill, leave current window intact
-nnoremap <leader>bd :BD<cr>
+nnoremap <leader>bd :BD!<cr>
 
 nnoremap <leader>bh :bprev<cr>
 nnoremap <leader>bl :bnext<cr>
