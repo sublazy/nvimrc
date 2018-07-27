@@ -17,6 +17,9 @@ nnoremap <leader>q :q!<cr>
 nnoremap <leader>xx :x!<cr>
 nnoremap <leader>w :w!<cr>
 
+" Save the file as root
+cmap ww w !sudo tee >/dev/null %
+
 nnoremap <leader>pl :PluginList<cr>
 nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>pc :PluginClean<cr>
