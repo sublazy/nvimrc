@@ -9,6 +9,7 @@ let mapleader = "\<space>"
 
 nnoremap <leader>ve :e! $MYVIMRC<cr>
 nnoremap <leader>vr :source $MYVIMRC<cr>
+nnoremap <leader>vk :e! ~/.config/nvim/keymap.vim<cr>
 
 " Open the command line
 nnoremap <leader>k :
