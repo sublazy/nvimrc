@@ -33,6 +33,7 @@ nnoremap <leader>tt :tabnew<cr>
 nnoremap <leader>tx :tabclose<cr>
 nnoremap <leader>ti :tabs<cr>
 
+" Visually select a word
 noremap vo viw
 
 " shortcuts for windows {{{
