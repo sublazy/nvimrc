@@ -14,7 +14,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'shougo/denite.nvim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'itchyny/lightline.vim'
 Plugin 'milkypostman/vim-togglelist'
@@ -120,36 +119,6 @@ let g:winresizer_finish_with_escape = 1
 let g:winresizer_start_key = '<C-?>'
 
 source ~/.config/nvim/keymap.vim
-
-" Denite customization
-" ---------------------------------------------------------------------
-
-" '_' means all buffers
-call denite#custom#option('_', 'highlight_mode_normal', 'CursorLine')
-
-" Change mappings.
-call denite#custom#map(
-      \ 'insert',
-      \ '<C-j>',
-      \ '<denite:move_to_next_line>',
-      \ 'noremap'
-      \)
-call denite#custom#map(
-      \ 'insert',
-      \ '<C-k>',
-      \ '<denite:move_to_previous_line>',
-      \ 'noremap'
-      \)
-
-" Ripgrep command on grep source
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts',
-        \ ['--vimgrep', '--no-heading'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
 
 " Easymotion customization
 " ---------------------------------------------------------------------
