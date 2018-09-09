@@ -95,19 +95,21 @@ nnoremap <leader>mk :colder<cr>
 "nnoremap - ddp
 "nnoremap _ ddkP
 
-nnoremap <leader>d :Denite<space>
-nnoremap <leader>dh :Denite help<cr>
-
-nnoremap <leader>8
-    \ :<C-u>DeniteCursorWord
-    \ grep:. -mode=normal
-    \ <cr>
-
-nnoremap <leader>dt :<C-u>Denite tag:. -mode=normal<cr>
-nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<cr>
-nnoremap <leader>hl :<C-u>Denite location_list -mode=normal -no-empty<cr>
-nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<cr>
-nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<cr>
+" TODO Replace Denite
+" nnoremap <leader>d :Denite<space>
+" nnoremap <leader>dh :Denite help<cr>
+" 
+" nnoremap <leader>8
+"     \ :<C-u>DeniteCursorWord
+"     \ grep:. -mode=normal
+"     \ <cr>
+" 
+" nnoremap <leader>dt :<C-u>Denite tag:. -mode=normal<cr>
+" nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<cr>
+" nnoremap <leader>hl :<C-u>Denite location_list -mode=normal -no-empty<cr>
+" nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<cr>
+" nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<cr>
+"
 
 " Show syntax highlighting groups for word under cursor
 nnoremap <C-S-P> :call <SID>SynStack()<cr>
@@ -253,6 +255,7 @@ nnoremap <leader>fw :edit %:p:h<cr>
 nnoremap <leader>fs :w!<cr>
 nnoremap <silent> <buffer> <cr> :call nerdtree#ui_glue#invokeKeyMap(g:NERDTreeMapActivateNode)<cr>
 
+" TODO replace denite
 nnoremap <leader>ff :Denite file_rec<cr>
 
 " Reload the file
@@ -260,6 +263,7 @@ nnoremap <leader>fl :e!<cr>
 
 " b layer -- buffers
 " ------------------------------------------------------------------------------
+" TODO replace denite
 nnoremap <leader>bb :Denite buffer:<cr>
 nnoremap <leader>bi :call BufferList()<cr>
 
