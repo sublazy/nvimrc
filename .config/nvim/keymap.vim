@@ -265,6 +265,10 @@ nnoremap <silent> <leader>fd :FasdDir<cr>
 " File history (like fr, but files are obtained from shada file)
 nnoremap <silent> <leader>fh :FileHist<cr>
 
+" All items: recent files and open buffers
+" TODO: extend with non-recent files from the current working tree
+nnoremap <silent> <leader>fa :FzfAll<cr>
+
 " Reload the file
 nnoremap <leader>fl :e!<cr>
 

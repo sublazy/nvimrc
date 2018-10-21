@@ -205,15 +205,33 @@ function! s:list_all_buffers() abort
     return bufs
 endfunction
 
+function! s:fasd_recent_files()
+    let files = split(execute('!fasd -flt', "silent!"), "\n")
+    return files
+endfunction
+
+function! s:files_and_buffers()
+    let items = s:list_all_buffers()
+    let items = extend(items, s:fasd_recent_files())
+    " for item in items
+    "     echo "item: " . item
+    " endfor
+    return items
+endfunction
+
+" For recent files, not necessarily in the current tree
 command! FasdFile call fzf#run(fzf#wrap({'source': 'fasd -flt', 'options': '--no-sort --tac --tiebreak=index'}))
 
+" For switching into a recent dir, not necessarily in the current tree
 command! FasdDir call fzf#run(fzf#wrap({'source': 'fasd -dlt', 'options': '--no-sort --tac --tiebreak=index'}))
 
 command! FileHist call fzf#run(fzf#wrap({'source': v:oldfiles}))
 
 command! FzfBuffers call fzf#run(fzf#wrap({'source': s:list_all_buffers()}))
 
-command! Test call s:list_all_buffers()
+command! FzfAll call fzf#run(fzf#wrap({'source': s:files_and_buffers()}))
+
+command! Test call s:files_and_buffers()
 
 " Set external formatter for XML files
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
