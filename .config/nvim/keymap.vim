@@ -290,6 +290,9 @@ nmap <leader>xl <Plug>CommentaryLine
 noremap <leader>xu gu
 noremap <leader>xU gU
 
+" Remove trailing whitespaces
+nnoremap <leader>xw :Rtw<cr>
+
 " Seamless tmux/vim pane navigation
 " ------------------------------------------------------------------------------
 let g:tmux_navigator_no_mappings = 1

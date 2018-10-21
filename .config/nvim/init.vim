@@ -93,6 +93,9 @@ hi BufferNormal term=NONE ctermfg=white ctermbg=black cterm=NONE
 let g:BufferListWidth = 20
 let g:BufferListMaxWidth = 40
 
+" Remove Trailing Whitespace
+command! Rtw %s/\s\+$//e
+
 " New settings (after switching to neovim).
 " -----------------------------------------------------------------------------
 
