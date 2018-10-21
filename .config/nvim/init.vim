@@ -119,6 +119,8 @@ let g:winresizer_horiz_resize = 1
 let g:winresizer_finish_with_escape = 1
 let g:winresizer_start_key = '<C-?>'
 
+" see :help 'shada'
+set shada=!,'100,<1,s1
 
 " Use ripgrep
 set grepprg=rg\ --vimgrep\ --trim
