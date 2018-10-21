@@ -108,6 +108,9 @@ set clipboard+=unnamedplus
 " Selection bar/menu used e.g. by :find command.
 set wildmenu
 
+" TODO start insert also when bringing existing terminal into focus.
+autocmd TermOpen * startinsert
+
 " Source the init.vim file after saving it
 "if has("autocmd")
 "    if !exists("autocommands_loaded")
