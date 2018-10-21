@@ -2,6 +2,10 @@ inoremap <F1>     <nop>
 nnoremap <BS>     <nop>
 nnoremap <C-H>    <nop>
 
+" Navigate within wrapped lines
+map j g<Down>
+map k g<Up>
+
 let mapleader = "\<space>"
 
 nnoremap <leader>ve :e! $MYVIMRC<cr>
