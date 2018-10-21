@@ -266,8 +266,7 @@ nnoremap <leader>fl :e!<cr>
 
 " b layer -- buffers
 " ------------------------------------------------------------------------------
-" TODO replace denite
-nnoremap <leader>bb :Denite buffer:<cr>
+"nnoremap <leader>bb <FREE BINDING> <cr>
 nnoremap <leader>bi :call BufferList()<cr>
 
 " bufkill, leave current window intact
