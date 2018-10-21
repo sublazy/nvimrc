@@ -98,7 +98,7 @@ nnoremap <leader>mk :colder<cr>
 nnoremap <leader>8
     \ :grep
     \ --ignore-case
-    \ --glob "*.[ch]"
+    \ --iglob "*.[ch]"
     \ <cword>
 
 " nnoremap <leader>dt :<C-u>Denite tag:. -mode=normal<cr>
