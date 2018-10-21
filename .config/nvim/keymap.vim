@@ -118,6 +118,7 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+
 " g layer -- going to places, within a buffer
 " ------------------------------------------------------------------------------
 "  keys left:
@@ -178,6 +179,7 @@ noremap gxU gU
 " ------------------------------------------------------------------------------
 " link, tag
 nnoremap <leader>jl <C-]>
+nnoremap <F3> <C-]>
 
 " file or path under the cursor
 nnoremap <leader>jf gf
