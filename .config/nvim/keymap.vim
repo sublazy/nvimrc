@@ -204,10 +204,10 @@ nnoremap <leader>lv :GitGutterToggle<cr>
 nnoremap <leader>li :set formatoptions+=a<cr>
 nnoremap <leader>lo :set formatoptions-=a<cr>
 nnoremap <leader>lt :NERDTreeToggle<cr>
-nnoremap <leader>ls :set wrap!<cr>
+nnoremap <leader>lw :set wrap!<cr>
 nnoremap <leader>lj :TagbarToggle<cr>
 " ~f~ autoformatting
-" ~s~ soft wrapping of long lines
+" ~s~
 " ~h~ hard wrapping of long lines
 " ~g~ grep results - highlighting of match occurences
 " ~n~ line numbers in the fringe
@@ -215,7 +215,7 @@ nnoremap <leader>lj :TagbarToggle<cr>
 " ***     l: toggles
 " ****  ~l~ location list
 " ****  ~f~ autoformatting (same as above?)
-" ****  ~s~ soft wrapping of long lines
+" ****  ~s~
 " ****  ~j~ tagbar
 " **** ~h~ hard wrapping of long lines
 " **** ~g~ grep results - highlighting of match occurences
@@ -225,11 +225,13 @@ nnoremap <leader>lj :TagbarToggle<cr>
 " **** ~c~ syntax coloring
 " **** ~t~ automatic tag generation
 " **** ~i~ source code indexing
+" **** ~w~ wrapping of long lines (soft)
 " **** ~e~ errors (spell checking)
-" **** ~k~ comment [nv]
+" **** ~x~ comment [nv]
+" **** ~a~ file outline (help, man)
 " [nv] - normal and visual modes maps
-" **** prime keys left: d j spc
-" **** keys left: q w y u p a ; z x v b
+" **** prime keys left: d j s spc
+" **** keys left: q w y u p ; z v b
 
 " v layer -- version control
 " ------------------------------------------------------------------------------
