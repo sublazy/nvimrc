@@ -1,9 +1,6 @@
 inoremap <F1>     <nop>
 nnoremap <BS>     <nop>
 nnoremap <C-H>    <nop>
-nnoremap <return> <nop>
-nnoremap <C-[>    <nop>
-nnoremap <C-]>    <nop>
 
 let mapleader = "\<space>"
 
@@ -177,7 +174,6 @@ noremap gxU gU
 " ------------------------------------------------------------------------------
 " link, tag
 nnoremap <leader>jl <C-]>
-nnoremap <C-]> <nop>
 
 " file or path under the cursor
 nnoremap <leader>jf gf
