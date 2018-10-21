@@ -95,15 +95,11 @@ nnoremap <leader>mk :colder<cr>
 "nnoremap - ddp
 "nnoremap _ ddkP
 
-" TODO Replace Denite
-" nnoremap <leader>d :Denite<space>
-" nnoremap <leader>dh :Denite help<cr>
-" 
-" nnoremap <leader>8
-"     \ :<C-u>DeniteCursorWord
-"     \ grep:. -mode=normal
-"     \ <cr>
-" 
+nnoremap <leader>8
+    \ :grep
+    \ <cword>
+    \ --glob "*.[ch]"
+
 " nnoremap <leader>dt :<C-u>Denite tag:. -mode=normal<cr>
 " nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<cr>
 " nnoremap <leader>hl :<C-u>Denite location_list -mode=normal -no-empty<cr>
