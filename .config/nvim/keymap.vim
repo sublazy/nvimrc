@@ -250,8 +250,16 @@ nnoremap <leader>fw :edit %:p:h<cr>
 nnoremap <leader>fs :w!<cr>
 nnoremap <silent> <buffer> <cr> :call nerdtree#ui_glue#invokeKeyMap(g:NERDTreeMapActivateNode)<cr>
 
-" TODO replace denite
-nnoremap <leader>ff :Denite file_rec<cr>
+nnoremap <leader>ff :FZF --cycle<cr>
+
+" Recent files
+nnoremap <silent> <leader>fr :FasdFile<cr>
+
+" Recent directories
+nnoremap <silent> <leader>fd :FasdDir<cr>
+
+" File history (like fr, but files are obtained from shada file)
+nnoremap <silent> <leader>fh :FileHist<cr>
 
 " Reload the file
 nnoremap <leader>fl :e!<cr>

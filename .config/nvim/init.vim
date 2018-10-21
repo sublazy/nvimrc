@@ -10,6 +10,7 @@ call vundle#begin()
 "Plugin 'VundleVim/Vundle.vim'
 
 " plugins on GitHub
+Plugin 'junegunn/fzf'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
@@ -153,6 +154,43 @@ let g:lightline = {
 let g:org_indent = 1
 
 " ---------------------------------------------------------------------
+
+" FZF customization
+" ---------------------------------------------------------------------
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+let g:fzf_layout = { 'window': '10split enew' }
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Keyword'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+" ---------------------------------------------------------------------
+
+function! s:fasd_update() abort
+    if empty(&buftype) || &filetype ==# 'dirvish'
+        call jobstart(['fasd', '-A', expand('%:p')])
+    endif
+endfunction
+augroup fasd
+    autocmd!
+    autocmd BufWinEnter,BufFilePost * call s:fasd_update()
+augroup END
+
+command! FasdFile call fzf#run(fzf#wrap({'source': 'fasd -flt', 'options': '--no-sort --tac --tiebreak=index'}))
+
+command! FasdDir call fzf#run(fzf#wrap({'source': 'fasd -dlt', 'options': '--no-sort --tac --tiebreak=index'}))
+
+command! FileHist call fzf#run(fzf#wrap({'source': v:oldfiles}))
 
 " Set external formatter for XML files
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
