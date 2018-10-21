@@ -270,7 +270,7 @@ nnoremap <leader>fl :e!<cr>
 
 " b layer -- buffers
 " ------------------------------------------------------------------------------
-"nnoremap <leader>bb <FREE BINDING> <cr>
+nnoremap <leader>bb :FzfBuffers<cr>
 nnoremap <leader>bi :call BufferList()<cr>
 
 " bufkill, leave current window intact

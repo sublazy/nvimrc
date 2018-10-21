@@ -196,11 +196,24 @@ augroup fasd
     autocmd BufWinEnter,BufFilePost * call s:fasd_update()
 augroup END
 
+function! s:list_all_buffers() abort
+    let bufs = []
+    for buf in getbufinfo()
+        call add(bufs, buf.name)
+    endfor
+    let bufs_as_string = string(bufs)
+    return bufs
+endfunction
+
 command! FasdFile call fzf#run(fzf#wrap({'source': 'fasd -flt', 'options': '--no-sort --tac --tiebreak=index'}))
 
 command! FasdDir call fzf#run(fzf#wrap({'source': 'fasd -dlt', 'options': '--no-sort --tac --tiebreak=index'}))
 
 command! FileHist call fzf#run(fzf#wrap({'source': v:oldfiles}))
+
+command! FzfBuffers call fzf#run(fzf#wrap({'source': s:list_all_buffers()}))
+
+command! Test call s:list_all_buffers()
 
 " Set external formatter for XML files
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
