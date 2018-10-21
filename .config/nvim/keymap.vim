@@ -299,6 +299,16 @@ noremap <leader>xU gU
 " Remove trailing whitespaces
 nnoremap <leader>xw :Rtw<cr>
 
+" i layer -- information
+" ------------------------------------------------------------------------------
+nnoremap <leader>il :!ls -l %:p<cr>
+nnoremap <leader>if :!file %:p<cr>
+
+" other layers
+" ------------------------------------------------------------------------------
+" Paste `ls -l` of the current file
+nnoremap <leader>rl :r !ls -l %:p<cr>
+
 " Seamless tmux/vim pane navigation
 " ------------------------------------------------------------------------------
 let g:tmux_navigator_no_mappings = 1
