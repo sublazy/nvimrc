@@ -205,12 +205,12 @@ function! s:list_all_buffers() abort
         call add(bufs, buf.name)
     endfor
     let bufs_as_string = string(bufs)
-    return bufs
+    return reverse(bufs)
 endfunction
 
 function! s:fasd_recent_files()
     let files = split(execute('!fasd -flt', "silent!"), "\n")
-    return files
+    return reverse(files)
 endfunction
 
 function! s:files_and_buffers()
