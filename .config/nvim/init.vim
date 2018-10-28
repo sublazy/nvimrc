@@ -223,21 +223,31 @@ augroup END
 
 function! s:list_all_buffers() abort
     let bufs = []
-    for buf in getbufinfo()
+    for buf in getbufinfo({'bufloaded':1})
         call add(bufs, buf.name)
+        "echo "buf: " . buf.name
     endfor
     let bufs_as_string = string(bufs)
-    return reverse(bufs)
+    return bufs
 endfunction
 
 function! s:fasd_recent_files()
     let files = split(execute('!fasd -flt', "silent!"), "\n")
-    return reverse(files)
+    call remove(files, 0, 1)
+    "for f in files
+    "    echo "file: " . f
+    "endfor
+    return files
 endfunction
 
 function! s:files_and_buffers()
-    let items = s:list_all_buffers()
-    let items = extend(items, s:fasd_recent_files())
+    let items = []
+    let files = s:fasd_recent_files()
+    let buffers = s:list_all_buffers()
+    let items = extend(items, files)
+    let items = extend(items, buffers)
+    " let items = uniq(sort(extend(items, buffers)))
+
     " for item in items
     "     echo "item: " . item
     " endfor
@@ -254,9 +264,13 @@ command! FileHist call fzf#run(fzf#wrap({'source': v:oldfiles}))
 
 command! FzfBuffers call fzf#run(fzf#wrap({'source': s:list_all_buffers()}))
 
-command! FzfAll call fzf#run(fzf#wrap({'source': s:files_and_buffers()}))
+command! FzfAll call fzf#run(fzf#wrap({'source': s:files_and_buffers(), 'options': '--tac --tiebreak=index'}))
 
-command! Test call s:files_and_buffers()
+command! TestAllBufs call s:list_all_buffers()
+command! TestRecentFiles call s:fasd_recent_files()
+noremap ,b :TestAllBufs<cr>
+noremap ,r :TestRecentFiles<cr>
+
 
 " Set external formatter for XML files
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
