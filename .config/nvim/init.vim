@@ -109,7 +109,7 @@ set clipboard+=unnamedplus
 set wildmenu
 
 " TODO start insert also when bringing existing terminal into focus.
-autocmd TermOpen * startinsert
+autocmd TermOpen * set nonumber | startinsert
 
 " Source the init.vim file after saving it
 "if has("autocmd")
