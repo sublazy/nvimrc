@@ -130,8 +130,9 @@ function! s:close_win(target)
     endif
 endfunction
 
-" TODO start insert also when bringing existing terminal into focus.
+" TODO start insert also in terminals entered via fzf.
 autocmd TermOpen * set nonumber | startinsert
+autocmd BufEnter term://* startinsert
 
 " Source the init.vim file after saving it
 "if has("autocmd")
