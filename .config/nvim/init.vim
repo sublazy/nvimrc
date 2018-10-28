@@ -108,6 +108,28 @@ set clipboard+=unnamedplus
 " Selection bar/menu used e.g. by :find command.
 set wildmenu
 
+function! s:winnr_below()
+    wincmd j
+    let result = winnr()
+    wincmd k
+    return result
+endfunction
+
+function! s:win_below_exists()
+    let id_below = s:winnr_below()
+    echo id_below
+    if id_below != winnr()
+        return id_below
+    else
+        return 0
+endfunction
+
+function! s:close_win(target)
+    if a:target != 0
+        exe a:target . "windo quit"
+    endif
+endfunction
+
 " TODO start insert also when bringing existing terminal into focus.
 autocmd TermOpen * set nonumber | startinsert
 
