@@ -256,7 +256,8 @@ nnoremap <leader>fw :edit %:p:h<cr>
 nnoremap <leader>fs :w!<cr>
 nnoremap <silent> <buffer> <cr> :call nerdtree#ui_glue#invokeKeyMap(g:NERDTreeMapActivateNode)<cr>
 
-nnoremap <leader>ff :FZF --cycle<cr>
+" Down the current directory tree
+nnoremap <leader>fj :FZF --cycle<cr>
 
 " Recent files
 nnoremap <silent> <leader>fr :FasdFile<cr>
@@ -268,8 +269,8 @@ nnoremap <silent> <leader>fd :FasdDir<cr>
 nnoremap <silent> <leader>fh :FileHist<cr>
 
 " All items: recent files and open buffers
-" TODO: extend with non-recent files from the current working tree
-nnoremap <silent> <leader>fa :FzfAll<cr>
+" TODO: extend with non-recent, non-open files from the current working tree
+nnoremap <silent> <leader>ff :FzfAll<cr>
 
 " Reload the file
 nnoremap <leader>fl :e!<cr>
