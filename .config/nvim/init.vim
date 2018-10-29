@@ -73,6 +73,8 @@ set number
 set title
 set titlestring=nvim
 
+set clipboard+=unnamedplus
+
 " Open command line without Shift key.
 nnoremap ; :
 
