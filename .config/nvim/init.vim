@@ -25,18 +25,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-speeddating'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/restore_view.vim'
-Plugin 'jceb/vim-orgmode'
 Plugin 'majutsushi/tagbar'
-Plugin 'freitass/todo.txt-vim'
-Plugin 'keith/swift.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-
-"Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-notes'
-"Plugin 'vim-scripts/The-NERD-Commenter'
 
 "" plugins from http://vim-scripts.org/vim/scripts.html
 Bundle 'bufferlist.vim'
