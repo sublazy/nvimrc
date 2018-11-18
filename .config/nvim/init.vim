@@ -29,6 +29,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/restore_view.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'zah/nim.vim'
 
 "" plugins from http://vim-scripts.org/vim/scripts.html
 Bundle 'bufferlist.vim'
