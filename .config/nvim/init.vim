@@ -264,9 +264,9 @@ command! FzfAll call fzf#run(fzf#wrap({'source': s:files_and_buffers(), 'options
 
 command! TestAllBufs call s:list_all_buffers()
 command! TestRecentFiles call s:fasd_recent_files()
-noremap ,b :TestAllBufs<cr>
-noremap ,r :TestRecentFiles<cr>
 
+noremap ,b :make -j<cr>
+noremap ,t :make test<cr>
 
 " Set external formatter for XML files
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
